@@ -7,7 +7,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/TJC-Tools/TJC.Test</RepositoryUrl>
     <Title>TJC Test Project</Title>
-    <Description>Test NuGet Project for publishing</Description>
+    <Description>Test NuGet Project for understanding publishing to NuGet registry</Description>
   </PropertyGroup>
 
   <ItemGroup>
