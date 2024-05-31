@@ -22,7 +22,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
           
-      - name: Add NuGet Source
+      - name: Add GitHub NuGet Source
         run: dotnet nuget add source --username "${{ github.repository_owner }}" --password ${{ secrets.TJC_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
         
       - name: Setup .NET 8.0
@@ -60,7 +60,7 @@ jobs:
       - name: List
         run: ls ${{ env.PROJECT_DIR_PATH }}/bin/Release
 
-      - name: Push Package to GitHub Packages
+      - name: Push Package to NuGet & GitHub Packages
         shell: powershell
         run: |
           $files = gci -File "${{ env.PROJECT_DIR_PATH }}/bin/Release/*.nupkg"
