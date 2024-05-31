@@ -65,6 +65,7 @@ jobs:
           {
             echo "Pushing NuGet Package: $file"
             dotnet nuget push "$file" --api-key ${{ secrets.TJC_NUGET_PUBLISH }} --source https://api.nuget.org/v3/index.json
+            dotnet nuget push "$file" --api-key ${{ secrets.TJC_TOKEN }} --source github
           }
 
       - name: ${{ format('Published NuGet Package [{0}]', steps.getVer.outputs.result) }}
