@@ -68,6 +68,7 @@ jobs:
             return next
 
       - name: Tag Version [${{ steps.getNextVersion.outputs.result }}]
+        if: ${{ steps.getChanges.outputs.any_modified != 'false' }}
         run: |
           git tag ${{ steps.getNextVersion.outputs.result }}
           git push origin tag ${{ steps.getNextVersion.outputs.result }}
