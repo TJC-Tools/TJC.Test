@@ -9,6 +9,16 @@
     <Title>TJC Test Project</Title>
     <Description>Test NuGet Project for understanding publishing to NuGet registry</Description>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="Nuget.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Nuget.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\README.md">
